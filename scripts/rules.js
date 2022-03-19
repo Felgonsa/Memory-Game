@@ -1,5 +1,5 @@
 let game = {
-    modeockMode: false,
+    lockMode: false,
     firstCard: null,
     secondCard: null,
 
