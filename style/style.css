@@ -1,0 +1,115 @@
+@font-face {
+    font-family: myFont;
+    src: url(../assets/font/cs_regular.ttf)
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: myFont, Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(99, 99, 99);
+}
+
+.mg {
+    position: absolute;
+    top: 40px;
+    font-size: 70px;
+    color: white;
+    text-shadow: 10px 10px 8px black;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 500ms ease-out;
+    cursor: pointer;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 10px 15px 8px black;
+    backface-visibility: hidden;
+}
+
+.icon {
+    width: 130px;
+    height: 130px;
+    transition-property: width, height;
+    transition: 100ms ease-in;
+}
+
+.icon:hover {
+    width: 145px;
+    height: 145px;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front {
+    background-color: rgb(67, 3, 185);
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-color: rgb(235, 88, 25);
+}
+
+#gameOver {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 55px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    top: 0;
+}
+
+#restart {
+    font-family: myFont;
+    padding: 15px;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 88, 25);
+    cursor: pointer;
+    margin-top: 20px;
+    transition-property: padding, font-size, color;
+    transition: 250ms ease-in-out;
+}
+
+#restart:hover {
+    padding: 25px;
+    font-size: 45px;
+    color: white;
+}
+
+#board {
+    max-width: 900px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr /1fr 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
