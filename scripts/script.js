@@ -83,7 +83,6 @@ function flip() {
             }
         }
     }
-    this.classList.add("flip")
 }
 
 function restart() {
