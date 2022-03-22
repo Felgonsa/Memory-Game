@@ -2,6 +2,7 @@ const FRONT = "front"
 const BACK = "back"
 const CARD = "card"
 const ICON = "icon"
+let count = 0
 
 startGame()
 
@@ -14,7 +15,11 @@ function startGame() {
 
 function inicializateCards(cards) {
     let board = document.getElementById("board")
+    let mov = document.getElementById("mov")
+    count = 0
+    mov.innerHTML = "movements: 0"
     board.innerHTML = ""
+
 
     game.cards.forEach(card => {
         let cardElement = document.createElement("div")
@@ -61,15 +66,22 @@ function createCardFace(face, card, element) {
 
 function flip() {
 
+
     if (game.setCard(this.id)) {
         this.classList.add("flip")
+        countCalculator()
         if (game.secondCard) {
+
             if (game.checkMatch()) {
+
+                console.log(count);
                 game.clearCards()
                 if (game.checkGameOver()) {
                     let gameOverLayer = document.getElementById("gameOver")
+                    let result = document.getElementById("result")
 
                     gameOverLayer.style.display = "flex"
+                    result.innerHTML = "total movements= " + countCalculator()
                 }
             } else {
                 setTimeout(() => {
@@ -90,4 +102,16 @@ function restart() {
     startGame()
     let gameOverLayer = document.getElementById("gameOver")
     gameOverLayer.style.display = "none"
+}
+
+function countCalculator() {
+    let cardFlip = document.getElementById(this.classList)
+
+    if (cardFlip != "flip") {
+        count++
+    }
+    document.getElementById("mov")
+    mov.innerHTML = `movements: ${count}`
+
+    return count
 }
