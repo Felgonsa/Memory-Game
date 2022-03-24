@@ -116,6 +116,13 @@ body {
     top: 130px;
 }
 
+#mov{
+positivo:absolut;
+bottom:10px;
+left:10px;
+font-size:40px;
+}
+
 @media(max-width:600px) {
     .mg {
         text-align: center;
