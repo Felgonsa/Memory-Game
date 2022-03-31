@@ -26,6 +26,13 @@ body {
     text-shadow: 10px 10px 8px black;
 }
 
+#mov {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 40px;
+}
+
 .card {
     width: 140px;
     height: 140px;
@@ -107,20 +114,20 @@ body {
     color: white;
 }
 
+#result {
+    font-size: 40px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
 #board {
     max-width: 900px;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr /1fr 1fr 1fr 1fr 1fr;
     gap: 25px;
     position: absolute;
-    top: 130px;
-}
-
-#mov{
-positivo:absolut;
-bottom:10px;
-left:10px;
-font-size:40px;
+    top: 150px;
 }
 
 @media(max-width:600px) {
